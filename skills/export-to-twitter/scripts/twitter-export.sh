@@ -3,11 +3,13 @@
 # Turns a high-res master (e.g. Kino 4K export) into the best-looking file X/Twitter accepts:
 # H.264 High 4.2, yuv420p bt709, max 1920x1080 (or 1080x1920 vertical), <=60fps, AAC-LC 192k 48kHz,
 # faststart, 2s GOP, VBV-capped CRF. Auto-raises CRF if the file would exceed X's 512 MB limit.
-# Output ALWAYS lands in the top level of ~/Downloads (only the filename of [out.mp4] is used).
+# Output lands in $TWITTER_EXPORT_DIR (default ~/Downloads); only the filename of [out.mp4] is used.
 set -euo pipefail
 in="${1:?usage: twitter-export.sh <master.mp4> [out.mp4] [crf]}"
 name="$(basename "${2:-$(basename "${in%.*}")-twitter.mp4}")"
-out="$HOME/Downloads/$name"
+out_dir="${TWITTER_EXPORT_DIR:-$HOME/Downloads}"
+mkdir -p "$out_dir"
+out="$out_dir/$name"
 crf="${3:-18}"
 limit_bytes=$((512*1000*1000))
 
