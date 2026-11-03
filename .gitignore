@@ -1,0 +1,41 @@
+# Per-show folders are local only. Commit only the template.
+projects/*
+!projects/README.md
+!projects/_example/
+!projects/_example/**
+
+# Media and render output, anywhere in the repo
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.mkv
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.png
+*.jpg
+*.jpeg
+*.heic
+*.webp
+*.gif
+*.psd
+*.exr
+**/backups/
+**/versions/
+**/slices/
+**/renders/
+**/stills/
+!skills/stills/
+ROADMAP.md
+!projects/_example/ROADMAP.md
+
+# System and tooling
+.DS_Store
+node_modules/
+__pycache__/
+.venv/
+.env
+.env.*
