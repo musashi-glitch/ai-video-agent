@@ -18,7 +18,7 @@
   <a href="#-quick-start">Quick start</a> ·
   <a href="#-the-pipeline">The pipeline</a> ·
   <a href="#-skills">Skills</a> ·
-  <a href="#-start-a-show">Start a show</a>
+  <a href="#-create-a-video">Create a video</a>
 </p>
 
 ---
@@ -28,7 +28,7 @@
 Every new agent session picks different models, different prompts and a different process, so your shots drift and your bill creeps up. **ai-video-agent** fixes the workflow in place:
 
 - 🎬 **Same look, every session.** One stills model and one motion model, with locked settings and prompt patterns.
-- 💸 **Every dollar logged.** Prices are quoted before each batch and every run is recorded in the show's `ROADMAP.md`.
+- 💸 **Every dollar logged.** Prices are quoted before each batch and every run is recorded in the video's `ROADMAP.md`.
 - 🛟 **No lost or double-paid jobs.** Timeouts and interrupts resume the job instead of paying for it twice.
 - 🎵 **Cut to the music.** Clips land on the bar grid, and lip-sync shots are measured, not eyeballed.
 
@@ -51,7 +51,7 @@ cd ~/code/ai-video-agent && ./install.sh
 
 Then tell your agent:
 
-> *"Use the video-pipeline skill for projects/my-show."*
+> *"Use the video-pipeline skill for projects/my-video."*
 
 **You'll need:** Kino desktop with its MCP server connected to your agent, fal access (through Kino's `fal` tool), and `ffmpeg`/`ffprobe`, `python3` and `bash`.
 
@@ -70,14 +70,14 @@ Then tell your agent:
 
 Plus [`playbooks/`](playbooks) for [models](playbooks/models.md), [prompt patterns](playbooks/prompt-patterns.md) and [camera moves](playbooks/camera-moves.md), and [`tools/`](tools) for a lip-sync lag checker.
 
-## 🎬 Start a show
+## 🎬 Create a video
 
 ```bash
-cp -R projects/_example projects/my-show
+cp -R projects/_example projects/my-video
 ```
 
 ```
-projects/my-show/
+projects/my-video/
 ├── BIBLE.md      style block, cast, set, rules, paths, budget
 ├── SHOTLIST.md   the plan, against the bar grid
 ├── CUTLIST.md    what's on the timeline now
@@ -85,11 +85,11 @@ projects/my-show/
 └── prompts.md    exact prompts of approved takes
 ```
 
-Fill in `BIBLE.md` first. Your show stays on your machine: everything under `projects/` except `_example` is gitignored, and so are media files and `stills/ slices/ backups/ versions/ renders/` anywhere in the repo.
+Fill in `BIBLE.md` first. Your video stays on your machine: everything under `projects/` except `_example` is gitignored, and so are media files and `stills/ slices/ backups/ versions/ renders/` anywhere in the repo.
 
 ## 🤝 Contributing
 
-Keep skills generic: no show names, media IDs or likenesses. When a session learns something that will hold up (a model setting, a camera lesson), add it to the matching skill or playbook. See [`AGENTS.md`](AGENTS.md) for the conventions.
+Keep skills generic: no project names, media IDs or likenesses. When a session learns something that will hold up (a model setting, a camera lesson), add it to the matching skill or playbook. See [`AGENTS.md`](AGENTS.md) for the conventions.
 
 ## 📄 License
 
